@@ -13,7 +13,7 @@ football-data.org API Container for Laravel 8
 Via Composer
 
 ``` bash
-$ composer require grambas/football-data dev-master
+$ composer require calli23/football-data dev-master
 ```
 
 ## Usage
