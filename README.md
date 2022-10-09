@@ -1,11 +1,11 @@
 # :FootballData
 
 
-football-data.org API Container for Laravel 5.1, 5.2
+football-data.org API Container for Laravel 8
 
 
 ## Requirements
--  "guzzlehttp/guzzle": "~6.0"
+-  "guzzlehttp/guzzle": "~7.0.1"
 
 
 ## Install
