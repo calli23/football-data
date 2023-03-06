@@ -28,7 +28,7 @@ class FootballData
 	 */
 	public function getLeagues(array $filter = ['areas' => ''])
 	{
-		$leagues = $this->run("v2/competitions"."?".http_build_query($filter) );
+		$leagues = $this->run("v4/competitions"."?".http_build_query($filter) );
 		return collect($leagues->competitions);
 	}
 
@@ -41,7 +41,7 @@ class FootballData
 	 */
 	public function getLeague(int $leagueID, array $filter = ['areas' => ''])
 	{
-		$league = $this->run("v2/competitions/{$leagueID}"."?".http_build_query($filter));
+		$league = $this->run("v4/competitions/{$leagueID}"."?".http_build_query($filter));
 		return collect($league);
 	}
 
@@ -54,7 +54,7 @@ class FootballData
 	 */
 	public function  getLeagueTeams(int $leagueID, array $filter = ['stage' => ''])
 	{
-		$leagueTeams = $this->run("v2/competitions/{$leagueID}/teams"."?".http_build_query($filter));
+		$leagueTeams = $this->run("v4/competitions/{$leagueID}/teams"."?".http_build_query($filter));
 		return collect($leagueTeams->teams);
 	}
 
@@ -66,7 +66,7 @@ class FootballData
 	 */
 	public function getLeagueStandings(int $leagueID)
 	{
-		$leagueStandings = $this->run("v2/competitions/{$leagueID}/standings");
+		$leagueStandings = $this->run("v4/competitions/{$leagueID}/standings");
 		return collect($leagueStandings->standings);
 	}
 
@@ -79,7 +79,7 @@ class FootballData
 	 */
 	public function getLeagueMatches(int $leagueID, array $filter = [ 'dateFrom' => '', 'dateTo' => '', 'stage' => '', 'status' => '', 'matchday' => '', 'group' => '' ])
 	{
-		$leagueMatches = $this->run("v2/competitions/{$leagueID}/matches"."?".http_build_query($filter));
+		$leagueMatches = $this->run("v4/competitions/{$leagueID}/matches"."?".http_build_query($filter));
 		return collect($leagueMatches->matches);
 	}
 	
@@ -95,7 +95,7 @@ class FootballData
 	 */
 	public function getMatches(array $filter = [ 'competitions' => '', 'dateFrom' => '', 'dateTo' => '', 'status' => '' ])
 	{
-		$matches = $this->run("v2/matches"."?".http_build_query($filter));
+		$matches = $this->run("v4/matches"."?".http_build_query($filter));
 		return collect($matches->matches);
 	}
 
@@ -107,7 +107,7 @@ class FootballData
 	 */
 	public function getMatche(int $matchID)
 	{
-		$matche = $this->run("v2/matches/{$matchID}");
+		$matche = $this->run("v4/matches/{$matchID}");
 		return collect($matche);
 	}
 
@@ -123,7 +123,7 @@ class FootballData
 	 */
 	public function getTeam(int $teamID)
 	{
-		$team = $this->run("v2/teams/{$teamID}");
+		$team = $this->run("v4/teams/{$teamID}");
 		return collect($team);
 	}
 
@@ -136,7 +136,7 @@ class FootballData
 	 */
 	public function getMatchesForTeam(int $teamID, array $filter = [ 'dateFrom' => '', 'dateTo' => '', 'status' => '', 'venue' => '' ])
 	{
-		$matches = $this->run("v2/teams/{$teamID}/matches"."?".http_build_query($filter));
+		$matches = $this->run("v4/teams/{$teamID}/matches"."?".http_build_query($filter));
 		return collect($matches->matches);
 	}
 
@@ -150,7 +150,7 @@ class FootballData
 	 */
 	public function getAreas()
 	{
-		$areas = $this->run("v2/areas");
+		$areas = $this->run("v4/areas");
 		return collect($areas->areas);
 	}
 
@@ -162,7 +162,7 @@ class FootballData
 	 */
 	public function getArea(int $areaID)
 	{
-		$area = $this->run("v2/areas/{$areaID}");
+		$area = $this->run("v4/areas/{$areaID}");
 		return collect($area);
 	}
 
