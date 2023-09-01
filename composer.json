@@ -2,7 +2,7 @@
     "name": "grambas/football-data",
     "type": "library",
     "minimum-stability": "dev",
-    "description": "football-data.org API container for Laravel 8",
+    "description": "football-data.org API container for Laravel 9/10",
     "keywords": [
         "grambas",
         "footbal-data"
@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "guzzlehttp/guzzle": "~7.0.1"
+        "guzzlehttp/guzzle": "~7.2"
     },
     "autoload": {
         "psr-4": {
